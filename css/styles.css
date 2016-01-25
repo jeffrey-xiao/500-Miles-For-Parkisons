@@ -1,0 +1,403 @@
+/* CSS Reset */
+html, body, a, em, img, strong, header, nav, section, aside, footer { background: transparent; border: 0; margin: 0; padding: 0; }
+
+/* Colour palette:
+	Dark grey (regular text) - rgb(30,30,30)
+	Teal (inactive links) - rgb(77,128,116)
+	Grey (active links, footer background) - rgb(99,121,125)
+	Medium grey (header background, footer border) - rgb(68,67,73)
+	Fuchsia (nav background, borders, headings) - rgb(204,63,134)
+*/
+
+/* Main styles */
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+	color: rgb(30,30,30);
+	font-family: Bitter, Georgia, serif;
+	font-size: 16px;
+	line-height: 24px;
+}
+
+.clearfix:after {
+    display:block;
+    clear:both;
+}
+
+p {
+    text-align: justify;
+}
+
+/*----- Menu Outline -----*/
+.menu-wrap {
+    width:100%;
+    box-shadow:0px 1px 3px rgba(0,0,0,0.2);
+    background-color: rgb(229, 58, 52);
+}
+ 
+.menu {
+    width:1000px;
+    margin:0px auto;
+}
+ 
+.menu li {
+    margin:0px;
+    list-style:none;
+    font-family:'Ek Mukta';
+}
+ 
+.menu a {
+    transition:all linear 0.15s;
+    color:#919191;
+}
+ 
+.menu li:hover > a, .menu .current-item > a {
+    text-decoration:none;
+    color:#be5b70;
+}
+
+.menu .arrow {
+    font-size:11px;
+    line-height:0%;
+}
+
+/*----- Top Level -----*/
+
+nav {
+    font-family: 'Open Sans', sans-serif;
+	background-color: rgb(229, 58, 52);
+	margin-bottom: 2%;
+	padding: 0.05%;
+	text-align: center;
+    height: 46px;
+}
+
+nav ul {
+    position: relative;
+    height: 100%;
+	list-style: none;
+    margin: 0 auto;
+    padding: 0px 0px 0px 0px;
+    font-size: 0;
+}
+
+nav ul li:hover > a {
+    background-color: rgb(121,0,0);
+    text-decoration: none;
+    color: white;
+}
+nav ul a:hover {
+    background-color: rgb(121,0,0);
+    text-decoration: none;
+    color: white;
+}
+
+nav ul li {
+    font-size: 16px;
+	display: inline-block;
+    height: 24px;
+    
+    position: relative;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    padding-top: 10px;
+    padding-bottom: 35px;
+    margin: 0 auto;
+    z-index: 100;
+}
+
+nav ul li a, nav ul li a:visited, nav ul li a:active, nav ul li a:link, nav ul li a:focus{
+    color: white;
+    text-transform: uppercase;
+	text-decoration: none;
+    display: block;
+    padding-top: 11px;
+    margin-top: -11px;
+    padding-bottom: 11px;
+    margin-bottom: -11px;
+    padding-right: 1vw;
+    padding-left: 1vw;
+    margin-left: -1vw;
+    margin-right: -1vw;
+}
+
+nav ul li ul {
+    position: absolute;
+    top: 46px;
+    left: 0;
+    display: block;
+    visibility: hidden;
+    opacity: 0;
+    padding: 0;
+    margin: 0;
+    width: 10vw;
+    min-width: 120px;
+    -webkit-transition: all 0.5s;
+       -moz-transition: all 0.5s;
+        -ms-transition: all 0.5s;
+         -o-transition: all 0.5s;
+            transition: all 0.5s;
+}
+
+nav ul li ul li{
+    height: 46px;
+    display:block;
+}
+nav ul li ul:hover {
+    opacity: 1;
+    visibility: visible;
+}
+nav ul li:hover ul {
+    opacity: 1;
+    visibility: visible;
+}
+
+nav ul li ul a {
+    white-space: nowrap; 
+    background-color: rgb(121,0,0);
+    display: block;
+}
+
+nav ul li ul a:hover {
+    background-color: #980000;
+}
+
+/*----- Bottom Level -----*/
+.sub-menu {
+    width:160%;
+    padding:5px 0px;
+    position:absolute;
+    top:100%;
+    left:0px;
+    z-index:-1;
+    opacity:0;
+    transition:opacity linear 0.15s;
+    box-shadow:0px 2px 3px rgba(0,0,0,0.2);
+    background:#2e2728;
+}
+
+.menu li:hover .sub-menu {
+    z-index:1;
+    opacity:1;
+}
+
+.sub-menu li {
+    display:block;
+    font-size:16px;
+}
+ 
+.sub-menu li a {
+    padding:10px 30px;
+    display:block;
+}
+ 
+.sub-menu li a:hover, .sub-menu .current-item a {
+    background:#3e3436;
+}
+
+h1 {
+	color: rgb(229, 58, 52);
+	font-family: Oswald, Helvetica, Arial, sans-serif;
+	font-weight: bold;
+	font-size: 30px;
+    margin-bottom: 10px;
+}
+
+h6 {
+	color: rgb(229, 58, 52);
+	font-family: Oswald, Helvetica, Arial, sans-serif;
+	font-weight: normal;
+	font-size: 20px;
+	text-decoration: underline;
+    margin-bottom: 10px;
+}
+
+h2, h3, h4, h5 {
+	color: rgb(229, 58, 52);
+	font-family: Oswald, Helvetica, Arial, sans-serif;
+	font-weight: normal;
+	font-size: 20px;
+    margin-bottom: 10px;
+}
+
+h1 {
+    line-height: 44px;
+    margin-bottom: 10px;
+}
+
+.special {
+	display: inline;
+}
+.pull-quote {
+	color: rgb(204,63,134);
+	float: right;
+	font-size: 32px;
+	font-style: italic;
+	line-height: 40px;
+	padding-right: 5%;
+	padding-left: 5%;
+	width: 50%;
+}
+
+a:link, a:visited {
+	color: rgb(77,128,116);
+	text-decoration: none;
+}
+
+a:hover, a:active, a:focus {
+	color: rgb(99,121,125);
+	text-decoration: underline;
+}
+
+nav a:link, nav a:visited, footer a:link, footer a:visited {
+	color: rgb(255,255,255);
+}
+
+footer a:active, footer a:hover, footer a:focus {
+	text-decoration: none;
+}
+
+/* Structure */
+header {
+	background-color: rgb(234, 81, 81);
+	background-image: url(../images/road6.png);
+	background-position: center bottom;
+	background-repeat: no-repeat;
+	background-size: cover;
+	color: rgb(255,255,255);
+	padding-top: 20%;
+	text-align: left;
+	height: px;
+	max-width: 100%;
+    margin-bottom: 10px;
+}
+
+header p {
+	font-family: Oswald, Helvetica, Arial, sans-serif;
+}
+
+.main {
+	padding: 2%;
+	width: 100%;
+}
+
+.sidebar {
+    text-align:center;
+    padding-top: 40px;
+}
+
+.main h3 {
+	margin: 0;
+    margin-bottom: 10px;
+}
+
+.main h4 {
+	margin-top: 0;
+    margin-bottom: 10px;
+}
+
+aside {
+	float: right;
+	padding: 2%;
+	width: 30%;
+}
+
+.aside1 {
+	float: left;
+	padding: 2%;
+	width: 45%;
+	text-align: center;
+}
+
+.aside2 {
+	float: right;
+	padding: 2%;
+	width: 45%;
+	text-align: center;
+}
+
+.aside3 {
+	clear: both;
+	padding: 2%;
+	width: 100%;
+	text-align: center;
+}
+
+.aside4 {
+	float: right;
+	padding: 2%;
+	width: 30%;
+	text-align: center;
+}
+
+.aside5 {
+	float: left;
+	padding: 2%;
+	width: 35%;
+}
+
+.aside6 {
+	float: right;
+	padding: 2%;
+	width: 55%;
+}
+
+footer {
+	background-color: rgb(229, 58, 52);
+	color: rgb(255,255,255);
+	clear: both;
+	padding: 2%;
+	text-align: center;
+}
+
+/* Responsive design tweaks */
+img {
+	height: auto;
+	max-width: 100%;
+}
+
+@media (max-width: 650px) {
+	.main, aside, .pull-quote {
+		float: none;
+		width: auto;
+	}
+}
+video {
+	height: auto;
+	max-width: 100%;
+}
+
+/* Styles for ng-animate */
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0.0;
+    }
+    75% {
+        opacity: 0.0;
+    }
+    100% {
+        opacity: 1.0;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1.0;
+    }
+    to {
+        opacity: 0.0;
+    }
+}
+
+.ng-enter {
+    animation: fadeIn 0.75s both ease-in;
+    z-index:9000;
+}
+.ng-leave {
+    animation: fadeOut 0.25s both ease-in;
+    z-index:8000;
+}
