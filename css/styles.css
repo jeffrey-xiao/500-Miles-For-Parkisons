@@ -12,14 +12,18 @@ html, body, a, em, img, strong, header, nav, section, aside, footer { background
 /* Main styles */
 html {
     height: 100%;
+    width: 100%;
 }
 
 body {
-    height: 100%;
+    width: 100%;
+    min-height: 100%;
+    padding-bottom: 200px;
 	color: rgb(30,30,30);
 	font-family: Bitter, Georgia, serif;
 	font-size: 16px;
 	line-height: 24px;
+    position: relative;
 }
 
 .clearfix:after {
@@ -31,6 +35,11 @@ p {
     text-align: justify;
 }
 
+#main{
+    width: 100%;
+    display:block;
+}
+
 /*----- Menu Outline -----*/
 .menu-wrap {
     width:100%;
@@ -39,7 +48,7 @@ p {
 }
  
 .menu {
-    width:1000px;
+    width:100px;
     margin:0px auto;
 }
  
@@ -204,6 +213,8 @@ h1 {
 	font-weight: bold;
 	font-size: 30px;
     margin-bottom: 10px;
+    line-height: 44px;
+    margin-bottom: 10px;
 }
 
 h6 {
@@ -220,11 +231,6 @@ h2, h3, h4, h5 {
 	font-family: Oswald, Helvetica, Arial, sans-serif;
 	font-weight: normal;
 	font-size: 20px;
-    margin-bottom: 10px;
-}
-
-h1 {
-    line-height: 44px;
     margin-bottom: 10px;
 }
 
@@ -280,13 +286,13 @@ header p {
 }
 
 .main {
-	padding: 2%;
-	width: 100%;
+	width: 80%;
+    margin: 0 auto;
 }
 
 .sidebar {
     text-align:center;
-    padding-top: 40px;
+    padding-top: 20px;
 }
 
 .main h3 {
@@ -299,50 +305,22 @@ header p {
     margin-bottom: 10px;
 }
 
-aside {
-	float: right;
-	padding: 2%;
-	width: 30%;
+.row-centered {
+    text-align: center;
 }
 
-.aside1 {
-	float: left;
-	padding: 2%;
-	width: 45%;
-	text-align: center;
+.donate-wrapper {
+    display:inline-block;
+    float: none;
+    height: 250px;
+    vertical-align: top;
+    text-align: center;
+    position: relative;
+    margin-right: -4px;
 }
 
-.aside2 {
-	float: right;
-	padding: 2%;
-	width: 45%;
-	text-align: center;
-}
-
-.aside3 {
-	clear: both;
-	padding: 2%;
-	width: 100%;
-	text-align: center;
-}
-
-.aside4 {
-	float: right;
-	padding: 2%;
-	width: 30%;
-	text-align: center;
-}
-
-.aside5 {
-	float: left;
-	padding: 2%;
-	width: 35%;
-}
-
-.aside6 {
-	float: right;
-	padding: 2%;
-	width: 55%;
+.donate-wrapper p {
+    text-align: center;
 }
 
 footer {
@@ -351,6 +329,13 @@ footer {
 	clear: both;
 	padding: 2%;
 	text-align: center;
+    width: 100%;
+    position:absolute;
+    bottom:0;
+}
+
+footer p {
+    text-align: center;
 }
 
 /* Responsive design tweaks */
