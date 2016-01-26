@@ -28,6 +28,8 @@ app.config(function($routeProvider, $locationProvider) {
         templateUrl: 'pages/volunteer.html'
     }).when('/contactus', {
         templateUrl: 'pages/contactus.html'
+    }).when('/temporarydonationspage', {
+        templateUrl: 'pages/temporarydonationspage.html'
     }).otherwise({
         redirectTo: '/'
     });
