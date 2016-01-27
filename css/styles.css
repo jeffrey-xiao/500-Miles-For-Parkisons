@@ -8,7 +8,7 @@ html, body, a, em, img, strong, header, nav, section, aside, footer { background
 	Medium grey (header background, footer border) - rgb(68,67,73)
 	Fuchsia (nav background, borders, headings) - rgb(204,63,134)
 */
-
++
 /* Main styles */
 html {
     height: 100%;
@@ -17,7 +17,7 @@ html {
 
 body {
     width: 100%;
-    min-height: 100%;
+    min-height: 100vh;
     padding-bottom: 200px;
 	color: rgb(30,30,30);
 	font-family: Bitter, Georgia, serif;
@@ -35,7 +35,7 @@ p {
     text-align: justify;
 }
 
-#main{
+#main {
     width: 100%;
     display:block;
 }
@@ -78,7 +78,6 @@ p {
 nav {
     font-family: 'Open Sans', sans-serif;
 	background-color: rgb(229, 58, 52);
-	margin-bottom: 2%;
 	padding: 0.05%;
 	text-align: center;
     height: 46px;
@@ -118,19 +117,24 @@ nav ul li {
     z-index: 100;
 }
 
-nav ul li a, nav ul li a:visited, nav ul li a:active, nav ul li a:link, nav ul li a:focus{
+nav ul li a, 
+nav ul li a:visited, 
+nav ul li a:active, 
+nav ul li a:link, 
+nav ul li a:focus{
     color: white;
     text-transform: uppercase;
 	text-decoration: none;
     display: block;
-    padding-top: 11px;
+    padding-top: 10px;
     margin-top: -11px;
-    padding-bottom: 11px;
+    padding-bottom: 36px;
     margin-bottom: -11px;
     padding-right: 1vw;
     padding-left: 1vw;
     margin-left: -1vw;
     margin-right: -1vw;
+    height: 45px;
 }
 
 nav ul li ul {
@@ -163,11 +167,8 @@ nav ul li:hover ul {
     opacity: 1;
     visibility: visible;
 }
-
 nav ul li ul a {
-    white-space: nowrap; 
     background-color: rgb(121,0,0);
-    display: block;
 }
 
 nav ul li ul a:hover {
@@ -248,18 +249,9 @@ h2, h3, h4, h5 {
 	width: 50%;
 }
 
-a:link, a:visited {
-	color: rgb(77,128,116);
-	text-decoration: none;
-}
-
 a:hover, a:active, a:focus {
 	color: rgb(99,121,125);
 	text-decoration: underline;
-}
-
-nav a:link, nav a:visited, footer a:link, footer a:visited {
-	color: rgb(255,255,255);
 }
 
 footer a:active, footer a:hover, footer a:focus {
@@ -267,6 +259,8 @@ footer a:active, footer a:hover, footer a:focus {
 }
 
 /* Structure */
+
+/* normal header styling */
 header {
 	background-color: rgb(234, 81, 81);
 	background-image: url(../images/road6.png);
@@ -276,17 +270,184 @@ header {
 	color: rgb(255,255,255);
 	padding-top: 20%;
 	text-align: left;
-	height: px;
-	max-width: 100%;
     margin-bottom: 10px;
+    display:inline-block;
+    width: 100%;
 }
 
 header p {
 	font-family: Oswald, Helvetica, Arial, sans-serif;
 }
 
+header .large-social-media {
+    display: block;
+}
+
+/* Mobile header */
+
+header .small-social-media {
+    padding: 0px 10%;
+    float: right;
+    display: none;
+}
+
+header .small-social-media i {
+    padding-left: 5px;
+}
+
+header .small-nav {
+    display: none;
+    background-color: #d51a1a;
+    padding: 10px 10%;
+    height: 40px;
+}
+
+header .site-title {
+    font-weight: bold;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    float: left;
+}
+
+header .hamburger-menu {
+    margin-top: 8px;
+    margin-bottom: 8px;
+    float: right;
+    width: 20px;
+    border: 2px solid white;
+    border-radius: 10px;
+    position: relative;
+    z-index: 0;
+    background-color:transparent;
+}
+
+header .hamburger-menu:before, header .hamburger-menu:after {
+    display: block;
+    content: "";
+    width: 20px;
+    position: absolute;
+    border: 2px solid white;
+    border-radius: 5px;
+    z-index: 1;
+    -webkit-transition: 0.5s;
+}
+
+header .hamburger-menu:before {
+    top: 6px;
+    left: -2px; 
+}
+header .hamburger-menu:after {
+    top: -10px;
+    left: -2px;
+}
+
+header .open .hamburger-menu:before {
+    -webkit-transform: translateY(-200%) rotate(-45deg);
+}
+
+header .open .hamburger-menu:after {
+    -webkit-transform: translateY(200%) rotate(45deg);
+}
+
+header .open .hamburger-menu {
+    border: none;
+}
+header .open {
+    padding: 5px 1px 5px 5px !important;
+}
+
+header .hamburger-button {
+    border: 1px solid white;
+    display: block;
+    float: right;
+    padding: 3px;
+    border-radius: 5px;
+    margin-top: -4px;
+    cursor: pointer;
+}
+
+html header .open-nav {
+    display: inline-block;
+}
+
+html header .open-nav li, html header .open-nav ul li ul {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    margin: 0;
+    padding-left: 0px;
+    padding-right: 0px;
+    background-color: red;
+    -webkit-transition: 0.5s;
+    height: 46px;
+}
+
+html header .open-nav li {
+    z-index: 99;
+    border-top: solid 1px white;
+    padding-top: 11px;
+    padding-bottom: 11px;
+}
+
+html header .open-nav ul li a {
+    text-align: left;
+    padding-left: 30px;
+    cursor: pointer;
+}
+
+html header .open-nav ul li ul li a {
+    z-index: 100;
+    padding-left: 60px;
+    background-color: red;
+}
+
+html header .open-nav ul li:hover ul li a,
+html header .open-nav ul li:hover ul li a:visited
+html header .open-nav ul li:hover ul li a:active
+html header .open-nav ul li:hover ul li a:link
+html header .open-nav ul li:hover ul li a:focus {
+    background-color: rgb(121,0,0);
+}
+
+html header .open-nav ul li ul li a:hover {
+    background-color: rgba(121,0,0,0.9);
+}
+
+
+html header .open-nav ul li ul {
+    overflow: visible;
+    top: 0;
+    width: 100%;
+    display: none;
+    visibility: visible;
+    opacity: 1;
+    margin-top: 10px;
+}
+
+html header .open-nav ul li .expanded {
+    display: inline-block;
+}
+
+html header .open-nav ul li a.dropdown:after {
+    content: "+";
+    float: right;
+    width: 20px;
+    height: 45px;
+    margin-top: -10px;
+    margin-bottom: -11px;
+    padding-top: 10px;
+    padding-bottom: 0;
+    display: inline-block;
+    text-align: center;
+    border-left: solid 1px white;
+}
+
+.clear {
+    clear:both;
+}
+
 .main {
-	width: 80%;
+	width: 90% !important;
     margin: 0 auto;
 }
 
@@ -344,11 +505,29 @@ img {
 	max-width: 100%;
 }
 
-@media (max-width: 650px) {
+@media (max-width: 740px) {
 	.main, aside, .pull-quote {
 		float: none;
 		width: auto;
 	}
+    html header {
+        background-image: none;
+        padding: 0;
+        background-color: #212121;
+        height: 64px;
+    }
+    html header .large-social-media {
+        display: none;
+    }
+    html header .small-social-media {
+        display: block;
+    }
+    html nav {
+        display: none;
+    }
+    html .small-nav {
+        display: block;
+    }
 }
 video {
 	height: auto;

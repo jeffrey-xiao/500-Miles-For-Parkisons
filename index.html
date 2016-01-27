@@ -6,6 +6,8 @@
         <title>500 Miles for Parkinson's</title>
         
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        
 		<link rel="stylesheet" href="css/styles.css" type="text/css"/>
 		<link href='http://fonts.googleapis.com/css?family=Oswald|Bitter:400,400italic,700' rel='stylesheet' type='text/css'>
         <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
@@ -24,15 +26,34 @@
 	</head>
 	<body>
         <header>
-            <img src="images/facebook.png">
-            <img src="images/twitter.png">
-            <img src="images/instagram.png">
-            <img src="images/pintrest.png">
+            <div class="large-social-media">
+                <img src="images/facebook.png">
+                <img src="images/twitter.png">
+                <img src="images/instagram.png">
+                <img src="images/pintrest.png">
+            </div>
+            <div class="small-social-media">
+                <i class="fa fa-facebook-square"></i>
+                <i class="fa fa-twitter-square"></i>
+                <i class="fa fa-instagram"></i>
+                <i class="fa fa-pinterest-square"></i>
+            </div>
+            <div class="clear"></div>
+            <div class="small-nav">
+                <div class="site-title">
+                    500 Miles
+                </div>
+                <a class="hamburger-button">
+                    <div class="hamburger-menu">    
+                    </div>
+                </a>
+                <div class="clear"></div>
+            </div>
             <nav>
                 <ul>
                     <li><a href="/">HOME</a></li>
                     <li> 
-                        <a>
+                        <a class="dropdown">
                             Programs
                         </a>
                         <ul>
@@ -42,16 +63,16 @@
                         </ul>
                     </li>
                     <li>
-                        <a>
+                        <a class="dropdown">
                             EVENTS
                         </a>
                         <ul>
-                            <!--<li><a href="newyork">New York</a></li>-->
+                            <li><a href="newyork">New York</a></li>
                             <li><a href="toronto">Toronto</a></li>
                         </ul>
                     </li>
                     <li>
-                        <a>
+                        <a class="dropdown">
                             SUPPORT
                         </a>
                         <ul>
@@ -61,12 +82,13 @@
                     </li>
                     <li><a href="parkinsons">PARKINSON'S</a></li>
                     <li>
-                        <a>
+                        <a class="dropdown">
                             Team
                         </a>
                         <ul>
                             <li><a href="harry">Harry</a></li>
                             <li><a href="sue">Sue</a></li>
+                            <li><a href="ross">Ross</a></li>
                         </ul>
                     </li>
                     <li><a href="volunteer">VOLUNTEER</a></li>
@@ -76,7 +98,7 @@
                         </a>
                     </li>
                 </ul>
-            </nav>		
+            </nav>
         </header>
 		<div id="main">
             <div ng-view>
