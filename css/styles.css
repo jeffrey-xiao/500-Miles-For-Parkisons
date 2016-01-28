@@ -40,6 +40,11 @@ p {
     display:block;
 }
 
+.logo {
+    width: 100%;
+    max-width: 330px;
+}
+
 /*----- Menu Outline -----*/
 .menu-wrap {
     width:100%;
@@ -148,11 +153,11 @@ nav ul li ul {
     margin: 0;
     width: 10vw;
     min-width: 120px;
-    -webkit-transition: all 0.5s;
-       -moz-transition: all 0.5s;
-        -ms-transition: all 0.5s;
-         -o-transition: all 0.5s;
-            transition: all 0.5s;
+    -webkit-transition: opacity 0.5s;
+       -moz-transition: opacity 0.5s;
+        -ms-transition: opacity 0.5s;
+         -o-transition: opacity 0.5s;
+            transition: opacity 0.5s;
 }
 
 nav ul li ul li{
@@ -368,6 +373,10 @@ header .hamburger-button {
 
 html header .open-nav {
     display: inline-block;
+    max-height: 1000px;
+    overflow: visible;
+    opacity: 1;
+    -webkit-transition: opacity 0.5s;
 }
 
 html header .open-nav li, html header .open-nav ul li ul {
@@ -378,7 +387,7 @@ html header .open-nav li, html header .open-nav ul li ul {
     padding-left: 0px;
     padding-right: 0px;
     background-color: red;
-    -webkit-transition: 0.5s;
+    -webkit-transition: opacity 0.5s;
     height: 46px;
 }
 
@@ -477,6 +486,7 @@ html header .open-nav ul li a.dropdown:after {
     vertical-align: top;
     text-align: center;
     position: relative;
+    margin-bottom: 40px;
     margin-right: -4px;
 }
 
@@ -523,7 +533,10 @@ img {
         display: block;
     }
     html nav {
-        display: none;
+        display:inline-block;
+        max-height: 0px;
+        opacity: 0;
+        overflow: hidden;
     }
     html .small-nav {
         display: block;
